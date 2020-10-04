@@ -1,6 +1,6 @@
 let dailyURL = 'https://api.nasa.gov/planetary/apod'; //APOD - Astronomy photo of the day
 let imageURL = 'https://images-api.nasa.gov';  //NASA Image library
-let epicURL = 'https://api.nasa.gov/EPIC/api/natural/'; //EPIC image 
+let epicURL = 'https://api.nasa.gov/EPIC/api/enhanced/'; //EPIC image 
 let epicSearch = 'date/'
 let imageSearch = '/search?q=apollo';
 let key = '?api_key=gWQwU9oVIst5HeoryDnfutr5hdZCaIkRB3h8mSpo';
@@ -23,7 +23,7 @@ searchForm.addEventListener('submit',fetchEpic);
     
 //    });
 
-//fetch NASA Image Libray
+// fetch NASA Image Libray
 // fetch(imageURL+imageSearch)
 // .then(function(imageLibrary){
 //     return imageLibrary.json();
@@ -52,23 +52,24 @@ function displayImage(json){
     console.log('photo:',photos);
 
     if(photos.length === 0){
-        console.log('No Results');
+        console.log('No Results');2
     }else {
         for (let i=0; i<photos.length; i++){
             let photo = photos[i].image;
             console.log('oct',photo);
-            let picture = document.getElementsByTagName('src');
-            picture.innerHTML=`https://epic.gsfc.nasa.gov/archive/natural/ + ${searchTerm.value}+'png'+${photos[i]}+.png`;
-
-            pictureShow.appendChild('src');
             
-/*
-this is the address of the file location.  api only show epic_1b_20200930001751
-https://epic.gsfc.nasa.gov/archive/natural/2020/09/30/png/epic_1b_20200930001751.png
+
+            let date = document.getElementById('search-date').value;    //date is pulled at 2020-09-27
+            let dateArray =date.split('-');                             //split('-') removes the - from the date and make it array of {2020,09,27}
+            let year = dateArray[0];                                    
+            let month = dateArray[1];
+            let day=dateArray[2];
+            
+
+            document.getElementById('test').src = `https://api.nasa.gov/EPIC/archive/enhanced/${year}/${month}/${day}/png/${photo}.png${key}`
 
 
-so did interpolation of 'https://epic.gsfc.nasa.gov/archive/natural/ + ${searchTerm.value}+'png'+${photos[i]}+.png`
-*/
+
 
         
 
@@ -77,3 +78,14 @@ so did interpolation of 'https://epic.gsfc.nasa.gov/archive/natural/ + ${searchT
 }
 
 
+/*
+
+https://api.nasa.gov/EPIC/archive/enhanced/2020/09/27/png/epic_RGB_20200927010436.png?api_key=gWQwU9oVIst5HeoryDnfutr5hdZCaIkRB3h8mSpo
+https://api.nasa.gov/EPIC/archive/enhanced/2020-09-27/png/undefined.png?api_key=gWQwU9oVIst5HeoryDnfutr5hdZCaIkRB3h8mSpo
+
+
+
+
+
+so did interpolation of 'https://epic.gsfc.nasa.gov/archive/natural/ + ${searchTerm.value}+'png'+${photos[i]}+.png`
+*/
