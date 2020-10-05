@@ -66,7 +66,7 @@ function displayImage(json){
             let day=dateArray[2];
             
 
-            document.getElementById('test').src = `https://api.nasa.gov/EPIC/archive/enhanced/${year}/${month}/${day}/png/${photo}.png${key}`
+            document.getElementsByClassName('carousel-item active').src = `https://api.nasa.gov/EPIC/archive/enhanced/${year}/${month}/${day}/png/${photo}.png${key}`
 
 
 
