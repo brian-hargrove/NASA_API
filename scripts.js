@@ -12,14 +12,26 @@ const submitBtn = document.querySelector('.submit');
 
 searchForm.addEventListener('submit',fetchEpic);
 
-//fetch APOD
+let t = 0;
+let txt = 'Greetings, if you don\'t know who I am, I am The Moon. You may have seen me up in your night sky and sometimes in your day sky.  I have complied a set of images of your world, you know, Earth..  Select a day from below and I will show you my Point Of View of your beautiful planet. By the way this is me during my Blood Wolf Lunar Eclipse of January 2019.';
+let speed = 70;
+
+function typeWriter() {
+    if(t<txt.length){
+        document.getElementById('type').innerHTML += txt.charAt(t);
+        t++;
+        setTimeout(typeWriter, speed);
+    }
+};
+
+// fetch APOD
 // fetch(dailyURL+key)  
 // .then(function(adop){
    
 //     return adop.json();
 // }).then(function(json){
 //     console.log('apod:',json);
-//     //displayAPOD(json);
+// //     //displayAPOD(json);
     
 //    });
 
@@ -47,14 +59,20 @@ fetch(url)
     });
 }
 
+  
 function displayImage(json){
     let photos=json;
     console.log('photo:',photos);
 
+   
+
     if(photos.length === 0){
-        console.log('No Results');2
+        alert('Unfortunately, my camera was broke on this day, please choose another day');
+        
+        console.log('No Results');
+
     }else {
-        for (let i=0; i<photos.length; i++){
+        for (let i=0; i<=photos.length; i++){
             let photo = photos[i].image;
             console.log('oct',photo);
             
@@ -66,7 +84,7 @@ function displayImage(json){
             let day=dateArray[2];
             
 
-            document.getElementsByClassName('carousel-item active').src = `https://api.nasa.gov/EPIC/archive/enhanced/${year}/${month}/${day}/png/${photo}.png${key}`
+            document.getElementById('img-fluid').src = `https://api.nasa.gov/EPIC/archive/enhanced/${year}/${month}/${day}/png/${photo}.png${key}`
 
 
 
@@ -76,8 +94,6 @@ function displayImage(json){
     }
     }
 }
-
-
 /*
 
 https://api.nasa.gov/EPIC/archive/enhanced/2020/09/27/png/epic_RGB_20200927010436.png?api_key=gWQwU9oVIst5HeoryDnfutr5hdZCaIkRB3h8mSpo
