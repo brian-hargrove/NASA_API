@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
-    <title>NASA API</title>
+    <title>Moon POV</title>
 </head>
 <body>
 
@@ -14,36 +14,31 @@
     <div class="container">
       <h1 class="display-4">Moon POV</h1>
       
-      <button onclick="typeWriter()">Click me</button>
+      <button onclick="typeWriter()">Click here to begin</button>
       <p id="type"></p>
 
-      <!-- <div class="typewriter">
-      <p>Greetings, if you don't know who I am, I am The Moon. You may have seen me up in your night sky and sometime in your day sky.  I have complies a set of images of your world, you know, Earth.  Select a day and I will show you my point of view of your beautiful planet. <br>
-      By the way this is me during my Blood Wolf Lunar Eclipse of January 2019.</p>
-    </div> -->
-
       <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
+        <div class="carousel-inner"> 
           <div class="carousel-item active" data-interval="10000">
-            <img src="./Assetts/lunarEclipse2019-01.JPG" class="d-block w-100" alt="...">
+            <img src="./assetts/lunarEclipse2019-01.JPG" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item" data-interval="2000">
-            <img src="./Assetts/lunarEclipse2019-02.JPG" class="d-block w-100" alt="...">
+            <img src="./assetts/lunarEclipse2019-02.JPG" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="./Assetts/lunarEclipse2019-06.JPG" class="d-block w-100" alt="...">
+            <img src="./assetts/lunarEclipse2019-03.JPG" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="./Assetts/lunarEclipse2019-08.JPG" class="d-block w-100" alt="...">
+            <img src="./assetts/lunarEclipse2019-05.JPG" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="./Assetts/lunarEclipse2019-09.JPG" class="d-block w-100" alt="...">
+            <img src="./assetts/lunarEclipse2019-06.JPG" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="./Assetts/lunarEclipse2019-11.JPG" class="d-block w-100" alt="...">
+            <img src="./assetts/lunarEclipse2019-13.JPG" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="./Assetts/lunarEclipse2019-13.JPG" class="d-block w-100" alt="...">
+            <img src="./assetts/lunarEclipse2019-14.JPG" class="d-block w-100" alt="...">
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
@@ -55,45 +50,32 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-      
-      
     </div>
-
-    
   </div>
-  
-  
-  
-  
-  <!-- Search Epic Site -->
   <section class="imagePicker"></section>
-    <form action="">
+  <div class="container2">
+    <div class="row">
+      <div class="col-lg">
+    <!-- Search Epic Site -->
+    <form class="button" action="">
       <p>
-        <label for="search-date">Enter a date (format YYYYMMDD): </label>
+        <label for="search-date">Enter a date: </label>
         <input type="date" id="search-date" class="search-date" pattern="[0-9]{8}">
       </p>
-      <p>
-        <button class="submit">Submit search</button>
-      </p>
+    <p>
+      <button class="submit">Submit search</button>
+    </p>
     </form>
-
-
-
-  <div class="test">
-    <h2>TEST</h2>
-      <img id="test" src="" alt="">
+      <div class="col-lg">
+        <!-- Cards -->
+        <div class="picture">
+        <img src="" id="img-fluid" alt="">
+        </div>
+      </div>
     </div>
-
-
-<hr>
-<!-- Cards -->
-<div class="picture">
-  <img src="" id="img-fluid" alt="Responsive image">
-</div>
+    </div>
+  </div>
 </section>
-
-
-
 <!-- Script links -->
 <script src="./scripts.js"></script>    
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
